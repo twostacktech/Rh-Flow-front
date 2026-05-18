@@ -107,22 +107,146 @@ function Sobre() {
           </h2>
 
           <p className="mt-6 text-zinc-500 text-lg leading-relaxed">
-           Sistema inteligente para gestão e automação de fluxos de Recursos Humanos.
-
+            O RH Flow surgiu a partir da ideia de criar uma plataforma
+            moderna e intuitiva para auxiliar empresas no gerenciamento
+            de funcionários de forma simples e eficiente.
           </p>
 
           <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
-           O RH Flow é uma aplicação desenvolvida para otimizar processos internos de RH, permitindo um controle mais fluido de colaboradores.
-           O foco principal é trazer transparência e agilidade para o dia a dia do setor.
+            Durante o desenvolvimento do projeto foram aplicados
+            conhecimentos em React, TypeScript, componentização,
+            rotas e estilização utilizando Tailwind CSS.
           </p>
 
           <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
-           Atualmente, o sistema permite o gerenciamento completo de funcionários, 
-           possibilitando cadastrar, visualizar, atualizar e remover informações de colaboradores de forma simples e organizada.
+            Além do aprendizado técnico, o objetivo principal sempre foi
+            desenvolver uma aplicação organizada, responsiva e agradável
+            visualmente para melhorar a experiência do usuário.
           </p>
 
         </div>
 
+      </section>
+
+      {/* Sobre TwoStack */}
+      <section className="max-w-5xl mx-auto px-6 pb-24">
+
+        <div className="bg-white border border-zinc-200 rounded-3xl p-12 shadow-sm">
+
+          <h2 className="text-4xl font-bold">
+           TwoStack
+          </h2>
+
+          <p className="mt-6 text-zinc-500 text-lg leading-relaxed">
+            A TwoStack é uma empresa de desenvolvimento de software 
+            focada na criação de soluções digitais eficientes,
+             modernas e escaláveis.
+          </p>
+
+          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+            Somos uma equipe altamente colaborativa,
+            onde cada projeto conta com profissionais especializados para garantir organização,
+            qualidade e agilidade em todas as etapas do ciclo de desenvolvimento. 
+            Nosso objetivo é transformar ideias em produtos digitais sólidos, com foco em performance,
+             usabilidade e impacto real para o negócio.
+          </p>
+
+          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+           No nosso portfólio de soluções, contamos com plataformas para diferentes segmentos, como gestão de recursos humanos, sistemas para o setor de seguros e uma solução de proteção veicular.
+           Todos os nossos projetos são desenvolvidos com foco na centralização de informações, automação de processos e em uma experiência digital mais simples e eficiente no dia a dia. 
+          </p>
+
+        </div>
+
+      </section>
+
+      {/* NOSSA EQUIPE */}
+      <section className="max-w-5xl mx-auto px-6 pb-24">
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Quem faz acontecer
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          
+          {/* Juliana Borges */}
+          <div className="flex flex-col items-center text-center bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-zinc-100 shadow-inner">
+              <img 
+                src="src/assets/Juliana_Borges.jpg" 
+                alt="Juliana Borges" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="mt-6 text-xl font-bold text-zinc-800">Juliana Borges</h3>
+            <p className="text-sm text-blue-500 mt-1">Desenvolvedora</p>
+          </div>
+
+          {/* Lucas Araujo */}
+          <div className="flex flex-col items-center text-center bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-zinc-100 shadow-inner">
+              <img 
+                src="src/assets/Lucas_araujo.png" 
+                alt="Lucas Araujo" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="mt-6 text-xl font-bold text-zinc-800">Lucas Araujo</h3>
+            <p className="text-sm text-blue-500 mt-1">Desenvolvedor</p>
+          </div>
+
+          {/* Lorena Godoi */}
+          <div className="flex flex-col items-center text-center bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-zinc-100 shadow-inner">
+              <img 
+                src="src/assets/Lorena_godoi.png" 
+                alt="Lorena Godoi" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="mt-6 text-xl font-bold text-zinc-800">Lorena Godoi</h3>
+            <p className="text-sm text-blue-500 mt-1">Desenvolvedora</p>
+          </div>
+
+          {/* Beatriz Braga */}
+          <div className="flex flex-col items-center text-center bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-zinc-100 shadow-inner">
+              <img 
+                src="src/assets/Beatriz_braga.png" 
+                alt="Beatriz Braga" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="mt-6 text-xl font-bold text-zinc-800">Beatriz Braga</h3>
+            <p className="text-sm text-blue-500 mt-1">Desenvolvedora</p>
+          </div>
+
+          {/* Luanna Alcântara */}
+          <div className="flex flex-col items-center text-center bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-zinc-100 shadow-inner">
+              <img 
+                src="src/assets/Luanna_alcantra.png" 
+                alt="Luanna Alcântara" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="mt-6 text-xl font-bold text-zinc-800">Luanna Alcântara</h3>
+            <p className="text-sm text-blue-500 mt-1">Desenvolvedora</p>
+          </div>
+
+          {/* Daniel Macedo */}
+          <div className="flex flex-col items-center text-center bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-zinc-100 shadow-inner">
+              <img 
+                src="src/assets/Daniel_macedo.png" 
+                alt="Daniel Macedo" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="mt-6 text-xl font-bold text-zinc-800">Daniel Macedo</h3>
+            <p className="text-sm text-blue-500 mt-1">Desenvolvedor</p>
+          </div>
+
+        </div>
       </section>
 
     </div>
