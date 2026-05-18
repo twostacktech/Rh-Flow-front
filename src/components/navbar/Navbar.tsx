@@ -1,9 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+type Theme = "light" | "dark";
+
 function Navbar() {
 
-    const [theme, setTheme] = useState<"light" | "dark">("light");
+    const [theme, setTheme] = useState<Theme>(() => {
+        const savedTheme = localStorage.getItem("theme") as Theme | null;
+
+        if (savedTheme === "light" || savedTheme === "dark") {
+            document.documentElement.classList.toggle("dark", savedTheme === "dark");
+            return savedTheme;
+        }
+
+        const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.classList.toggle("dark", preferredTheme === "dark");
+        return preferredTheme;
+    });
 
     useEffect(() => {
         // Verifica se o usuário já tem uma preferência de tema no sistema ou se a classe dark está ativa
@@ -14,9 +27,11 @@ function Navbar() {
     const toggleTheme = () => {
         if (theme === "light") {
             document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
             setTheme("dark");
         } else {
             document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
             setTheme("light");
         }
     };
@@ -85,7 +100,7 @@ function Navbar() {
           {/* Botão Cadastrar */}
           <Link
             to="/funcionarios/novo"
-            className="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-md transition-transform hover:scale-105 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+            className="rounded-md bg-gradient-to-r from-blue-700 to-cyan-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition-transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600"
           >
             Cadastrar
           </Link>

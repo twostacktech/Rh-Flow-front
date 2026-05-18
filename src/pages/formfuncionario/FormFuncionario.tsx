@@ -1,13 +1,16 @@
 import { ArrowLeft, UserPlus } from "@phosphor-icons/react";
-import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
+
+import { useToast } from "../../components/toast/ToastProvider";
 import type Funcionario from "../../models/Funcionario";
 import { atualizar, buscar, cadastrar } from "../../services/Service";
 
 function FormFuncionario() {
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
+    const toast = useToast();
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -33,7 +36,7 @@ function FormFuncionario() {
             await buscar(`/funcionario/${id}`, setFuncionario);
         } catch (error) {
             console.log(error);
-            alert("Erro ao buscar funcionário!");
+            toast.error("Erro ao buscar funcionário!");
         }
     }
 
@@ -44,16 +47,16 @@ function FormFuncionario() {
         try {
             if (id !== undefined) {
                 await atualizar("/funcionario", funcionario, setFuncionario);
-                alert("Funcionário atualizado com sucesso!");
+                toast.success("Funcionário atualizado com sucesso!");
             } else {
                 await cadastrar("/funcionario", funcionario, setFuncionario);
-                alert("Funcionário cadastrado com sucesso!");
+                toast.success("Funcionário cadastrado com sucesso!");
             }
 
             navigate("/funcionarios");
         } catch (error) {
             console.log(error);
-            alert("Erro ao salvar funcionário!");
+            toast.error("Erro ao salvar funcionário!");
         }
 
         setIsLoading(false);
@@ -68,18 +71,17 @@ function FormFuncionario() {
     return (
         <div className="min-h-screen bg-slate-50 px-24 py-6">
             <div className="max-w-4xl mx-auto">
-
                 <button
                     onClick={() => navigate("/funcionarios")}
-                    className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-8 hover:text-blue-600 transition duration-200"
+                    className="flex items-center gap-2 text-sm font-semibold text-slate-900 mb-8 hover:text-cyan-500 transition duration-200"
                 >
                     <ArrowLeft size={18} />
                     Voltar para a lista
                 </button>
 
                 <div className="flex items-center gap-5 mb-10">
-                    <div className="bg-slate-200 p-4 rounded-2xl">
-                        <UserPlus size={32} className="text-blue-600" />
+                    <div className="bg-gradient-to-br from-blue-600 to-cyan-500 p-4 rounded-2xl shadow-md">
+                        <UserPlus size={32} className="text-white" />
                     </div>
 
                     <div>
@@ -172,7 +174,7 @@ function FormFuncionario() {
 
                             <button
                                 type="submit"
-                                className="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition duration-200"
+                                className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-700 to-cyan-500 text-white font-semibold shadow-sm transition-colors duration-200 hover:from-blue-700 hover:to-cyan-600"
                             >
                                 {isLoading ? (
                                     <ClipLoader size={22} color="#ffffff" />
@@ -185,7 +187,6 @@ function FormFuncionario() {
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     );

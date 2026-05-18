@@ -6,22 +6,25 @@ import Home from './pages/home/Home'
 import Sobre from './pages/sobre/Sobre'
 import Funcionarios from './pages/funcionarios/Funcionarios'
 import FormFuncionario from './pages/formfuncionario/FormFuncionario'
+import { ToastProvider } from './components/toast/ToastProvider'
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/home" element={<Home />}/> 
-        <Route path="/sobre" element={<Sobre />}/>
-        <Route path="/funcionarios" element={<Funcionarios />}/>
-        <Route path="/cadastro-funcionario" element={<FormFuncionario />}/>
-        <Route path="/editar-funcionario/:id" element={<FormFuncionario />} />
-      </Routes>
-      <Footer/>
+      <ToastProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/home" element={<Home />}/> 
+          <Route path="/sobre" element={<Sobre />}/>
+          <Route path="/funcionarios" element={<Funcionarios />}/>
+          <Route path="/cadastro-funcionario" element={<FormFuncionario />}/>
+          <Route path="/editar-funcionario/:id" element={<FormFuncionario />} />
+        </Routes>
+        <Footer/>
+      </ToastProvider>
       </BrowserRouter>
     </>
   )

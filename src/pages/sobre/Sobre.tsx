@@ -7,15 +7,12 @@ function Sobre() {
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 py-24 text-center">
 
-        <button className="px-5 py-2 rounded-full border border-zinc-300 text-sm text-zinc-600 bg-white shadow-sm">
-          Sobre nós
-        </button>
-
         <h1 className="mt-8 text-5xl md:text-7xl font-bold leading-tight">
           Tecnologia que{" "}
-          <span className="text-blue-500">
-            valoriza <br /> pessoas
+          <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+            valoriza
           </span>
+          <br /> pessoas
         </h1>
 
         <p className="mt-8 text-zinc-500 text-lg max-w-4xl mx-auto leading-relaxed">
@@ -32,7 +29,7 @@ function Sobre() {
         {/* MISSÃO */}
         <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300">
 
-          <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-md">
             <Target
               size={28}
               weight="fill"
@@ -54,7 +51,7 @@ function Sobre() {
         {/* VISÃO */}
         <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300">
 
-          <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-md">
             <RocketLaunch
               size={28}
               weight="fill"
@@ -76,7 +73,7 @@ function Sobre() {
         {/* VALORES */}
         <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300">
 
-          <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-md">
             <Heart
               size={28}
               weight="fill"
@@ -178,7 +175,7 @@ function Sobre() {
               />
             </div>
             <h3 className="mt-6 text-xl font-bold text-zinc-800">Juliana Borges</h3>
-            <p className="text-sm text-blue-500 mt-1">Desenvolvedora</p>
+            <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedora</p>
           </div>
 
           {/* Lucas Araujo */}
@@ -191,7 +188,7 @@ function Sobre() {
               />
             </div>
             <h3 className="mt-6 text-xl font-bold text-zinc-800">Lucas Araujo</h3>
-            <p className="text-sm text-blue-500 mt-1">Desenvolvedor</p>
+            <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedor</p>
           </div>
 
           {/* Lorena Godoi */}
@@ -204,7 +201,7 @@ function Sobre() {
               />
             </div>
             <h3 className="mt-6 text-xl font-bold text-zinc-800">Lorena Godoi</h3>
-            <p className="text-sm text-blue-500 mt-1">Desenvolvedora</p>
+            <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedora</p>
           </div>
 
           {/* Beatriz Braga */}
@@ -217,7 +214,7 @@ function Sobre() {
               />
             </div>
             <h3 className="mt-6 text-xl font-bold text-zinc-800">Beatriz Braga</h3>
-            <p className="text-sm text-blue-500 mt-1">Desenvolvedora</p>
+            <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedora</p>
           </div>
 
           {/* Luanna Alcântara */}
@@ -230,7 +227,7 @@ function Sobre() {
               />
             </div>
             <h3 className="mt-6 text-xl font-bold text-zinc-800">Luanna Alcântara</h3>
-            <p className="text-sm text-blue-500 mt-1">Desenvolvedora</p>
+            <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedora</p>
           </div>
 
           {/* Daniel Macedo */}
@@ -243,7 +240,7 @@ function Sobre() {
               />
             </div>
             <h3 className="mt-6 text-xl font-bold text-zinc-800">Daniel Macedo</h3>
-            <p className="text-sm text-blue-500 mt-1">Desenvolvedor</p>
+            <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedor</p>
           </div>
 
         </div>
