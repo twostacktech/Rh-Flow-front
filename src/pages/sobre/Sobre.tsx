@@ -1,9 +1,10 @@
-import { Target, Rocket, Heart } from "lucide-react"
+import { Target, RocketLaunch, Heart } from "@phosphor-icons/react"
 
 function Sobre() {
   return (
     <div className="min-h-screen bg-[#f5f7fb] text-zinc-900">
 
+      {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 py-24 text-center">
 
         <button className="px-5 py-2 rounded-full border border-zinc-300 text-sm text-zinc-600 bg-white shadow-sm">
@@ -22,14 +23,21 @@ function Sobre() {
           design e obsessão pelo cliente para entregar uma plataforma
           que o seu time ama usar todos os dias.
         </p>
+
       </section>
 
+      {/* CARDS */}
       <section className="max-w-7xl mx-auto px-6 pb-24 grid md:grid-cols-3 gap-8">
 
-        <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm">
+        {/* MISSÃO */}
+        <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300">
 
           <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
-            <Target size={28} className="text-white" />
+            <Target
+              size={28}
+              weight="fill"
+              className="text-white"
+            />
           </div>
 
           <h2 className="mt-8 text-3xl font-bold">
@@ -43,10 +51,15 @@ function Sobre() {
 
         </div>
 
-        <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm">
+        {/* VISÃO */}
+        <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300">
 
           <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
-            <Rocket size={28} className="text-white" />
+            <RocketLaunch
+              size={28}
+              weight="fill"
+              className="text-white"
+            />
           </div>
 
           <h2 className="mt-8 text-3xl font-bold">
@@ -60,10 +73,15 @@ function Sobre() {
 
         </div>
 
-        <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm">
+        {/* VALORES */}
+        <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300">
 
           <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
-            <Heart size={28} className="text-white" />
+            <Heart
+              size={28}
+              weight="fill"
+              className="text-white"
+            />
           </div>
 
           <h2 className="mt-8 text-3xl font-bold">
