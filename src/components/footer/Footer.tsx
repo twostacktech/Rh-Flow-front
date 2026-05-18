@@ -1,26 +1,20 @@
 import { FacebookLogoIcon, InstagramLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react"
 
-function Footer() {
-
-    let data = new Date().getFullYear()
-
-    return (
-        <>
-            <div className="flex justify-center bg-indigo-500 text-white">
-                <div className="container flex flex-col items-center py-4">
-                    <p className='text-xl font-bold'>
-                        RH Flow | Copyright: {data}
-                    </p>
-                    <p className='text-lg'>Acesse nossas redes sociais</p>
-                    <div className='flex gap-2'>
-                        <LinkedinLogoIcon size={48} weight='bold' />
-                        <InstagramLogoIcon size={48} weight='bold' />
-                        <FacebookLogoIcon size={48} weight='bold' />
-                    </div>
-                </div>
-            </div>
-        </>
-    )
+export function Footer() {
+  return (
+    <footer className="border-t border-border/50 bg-surface/40 mt-24">
+      <div className="mx-auto max-w-7xl px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex items-center gap-2">
+          <img src="/RH_FLOW-semfundo.png" alt="RH Flow" className="h-12 w-12 rounded object-contain" />
+          <span className="font-display font-semibold">RH Flow</span>
+        </div>
+        <p className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} RH Flow. Gestão de pessoas.
+        </p>
+      </div>
+    </footer>
+  );
 }
+
 
 export default Footer
