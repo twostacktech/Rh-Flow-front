@@ -1,4 +1,3 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/footer/Footer'
 import Navbar from './components/navbar/Navbar'
@@ -12,30 +11,19 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/home" element={<Home />}/>
-      </Routes>
-      <Footer/>
+        <Navbar />
+        <div>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/funcionarios' element={<Funcionarios />} />
+            <Route path="/cadastro-funcionario" element={<Cadastro />} />
+          </Routes>
+        </div>
+        <Footer/>
       </BrowserRouter>
     </>
   )
 }
 
 export default App
-
-
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <Routes>
-//         <Route path="/" element={<h1>ROTA FUNCIONANDO</h1>} />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default App;
