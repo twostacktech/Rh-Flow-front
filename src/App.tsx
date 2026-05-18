@@ -1,15 +1,27 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/footer/Footer'
 import Navbar from './components/navbar/Navbar'
 import Home from './pages/home/Home'
+import Funcionarios from './pages/funcionarios/Funcionarios'
+import Cadastro from './pages/cadastro/Cadastro'
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <Home />
-      <Footer/>
+      <BrowserRouter>
+        <Navbar />
+        <div>
+          <Routes>
+            <Route path='/home' element={<Home />} />
+            <Route path='/' element={<Funcionarios />} />
+            <Route path='/funcionarios' element={<Funcionarios />} />
+            <Route path="/cadastro-funcionario" element={<Cadastro />} />
+          </Routes>
+        </div>
+        <Footer/>
+      </BrowserRouter>
     </>
   )
 }
