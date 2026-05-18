@@ -5,8 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Sobre from './pages/sobre/Sobre'
 import Funcionarios from './pages/funcionarios/Funcionarios'
-import Cadastro from './pages/cadastro/Cadastro'
-
+import FormFuncionario from './pages/formfuncionario/FormFuncionario'
 
 function App() {
 
@@ -19,7 +18,8 @@ function App() {
         <Route path="/home" element={<Home />}/> 
         <Route path="/sobre" element={<Sobre />}/>
         <Route path="/funcionarios" element={<Funcionarios />}/>
-        <Route path="/cadastro-funcionario" element={<Cadastro />}/>
+        <Route path="/cadastro-funcionario" element={<FormFuncionario />}/>
+        <Route path="/editar-funcionario/:id" element={<FormFuncionario />} />
       </Routes>
       <Footer/>
       </BrowserRouter>

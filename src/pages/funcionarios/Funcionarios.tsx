@@ -1,7 +1,43 @@
 import { Link } from "react-router-dom";
-import { Plus, UsersThree } from "@phosphor-icons/react";
+import { Plus, UsersThree, PencilSimple, Trash } from "@phosphor-icons/react";
+
+import { useEffect, useState } from "react";
+
+import type Funcionario from "../../models/Funcionario";
+import { buscar, deletar } from "../../services/Service";
 
 function Funcionarios() {
+
+    const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
+
+    async function buscarFuncionarios() {
+        try {
+            await buscar("/funcionario", setFuncionarios);
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao buscar funcionários!");
+        }
+    }
+
+    async function deletarFuncionario(id: number) {
+        const confirmar = window.confirm("Tem certeza que deseja excluir este funcionário?");
+
+        if (!confirmar) return;
+
+        try {
+            await deletar(`/funcionario/${id}`);
+            alert("Funcionário excluído com sucesso!");
+            buscarFuncionarios();
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao excluir funcionário!");
+        }
+    }
+
+    useEffect(() => {
+        buscarFuncionarios();
+    }, []);
+
     return (
         <div className="min-h-screen bg-slate-50 px-24 py-10">
 
@@ -24,7 +60,9 @@ function Funcionarios() {
                             </h1>
 
                             <p className="text-xl text-slate-600">
-                                Nenhum funcionário cadastrado ainda.
+                                {funcionarios.length === 0
+                                    ? "Nenhum funcionário cadastrado ainda."
+                                    : `${funcionarios.length} funcionário(s) cadastrado(s).`}
                             </p>
                         </div>
 
@@ -40,30 +78,98 @@ function Funcionarios() {
 
                 </div>
 
-                <div className="bg-white border border-slate-300 rounded-2xl min-h-[400px] flex flex-col items-center justify-center text-center px-6">
+                {funcionarios.length === 0 ? (
 
-                    <UsersThree
-                        size={64}
-                        className="text-slate-500 mb-6"
-                    />
+                    <div className="bg-white border border-slate-300 rounded-2xl min-h-[400px] flex flex-col items-center justify-center text-center px-6">
 
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                        Comece cadastrando seu primeiro funcionário
-                    </h2>
+                        <UsersThree
+                            size={64}
+                            className="text-slate-500 mb-6"
+                        />
 
-                    <p className="text-xl text-slate-600 max-w-xl mb-8">
-                        Os funcionários cadastrados aparecerão aqui, com opções de editar e remover.
-                    </p>
+                        <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                            Comece cadastrando seu primeiro funcionário
+                        </h2>
 
-                    <Link
-                        to="/cadastro-funcionario"
-                        className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl transition duration-200"
-                    >
-                        <Plus size={22} />
-                        Cadastrar funcionário
-                    </Link>
+                        <p className="text-xl text-slate-600 max-w-xl mb-8">
+                            Os funcionários cadastrados aparecerão aqui, com opções de editar e remover.
+                        </p>
 
-                </div>
+                        <Link
+                            to="/cadastro-funcionario"
+                            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl transition duration-200"
+                        >
+                            <Plus size={22} />
+                            Cadastrar funcionário
+                        </Link>
+
+                    </div>
+
+                ) : (
+
+                    <div className="bg-white border border-slate-300 rounded-2xl overflow-hidden">
+
+                        <div className="grid grid-cols-5 gap-4 px-6 py-4 border-b border-slate-300 font-semibold text-slate-700">
+
+                            <span>Nome</span>
+                            <span>Cargo</span>
+                            <span>Departamento</span>
+                            <span>Salário</span>
+                            <span className="text-center">Ações</span>
+
+                        </div>
+
+                        {funcionarios.map((funcionario) => (
+
+                            <div
+                                key={funcionario.id}
+                                className="grid grid-cols-5 gap-4 px-6 py-5 items-center border-b border-slate-200"
+                            >
+
+                                <span className="font-semibold">
+                                    {funcionario.nome}
+                                </span>
+
+                                <span>
+                                    {funcionario.cargo}
+                                </span>
+
+                                <span>
+                                    {funcionario.departamento}
+                                </span>
+
+                                <span>
+                                    {Number(funcionario.salario).toLocaleString("pt-BR", {
+                                        style: "currency",
+                                        currency: "BRL",
+                                    })}
+                                </span>
+
+                                <div className="flex items-center justify-center gap-4">
+
+                                    <Link
+                                        to={`/editar-funcionario/${funcionario.id}`}
+                                        className="text-slate-700 hover:text-blue-600 transition duration-200"
+                                    >
+                                        <PencilSimple size={22} />
+                                    </Link>
+
+                                    <button
+                                        onClick={() => deletarFuncionario(funcionario.id)}
+                                        className="text-red-500 hover:text-red-700 transition duration-200"
+                                    >
+                                        <Trash size={22} />
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        ))}
+
+                    </div>
+
+                )}
 
             </div>
 

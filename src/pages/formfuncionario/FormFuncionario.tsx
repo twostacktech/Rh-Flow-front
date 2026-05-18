@@ -1,12 +1,72 @@
 import { ArrowLeft, UserPlus } from "@phosphor-icons/react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
+import { ClipLoader } from "react-spinners";
+import type Funcionario from "../../models/Funcionario";
+import { atualizar, buscar, cadastrar } from "../../services/Service";
 
-function Cadastro() {
+function FormFuncionario() {
     const navigate = useNavigate();
+    const { id } = useParams<{ id: string }>();
+
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    const [funcionario, setFuncionario] = useState<Funcionario>({
+        id: 0,
+        nome: "",
+        salario: 0,
+        departamento: "",
+        cargo: "",
+    });
+
+    function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+        setFuncionario({
+            ...funcionario,
+            [e.target.name]: e.target.name === "salario"
+                ? Number(e.target.value)
+                : e.target.value,
+        });
+    }
+
+    async function buscarPorId(id: string) {
+        try {
+            await buscar(`/funcionario/${id}`, setFuncionario);
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao buscar funcionário!");
+        }
+    }
+
+    async function salvarFuncionario(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setIsLoading(true);
+
+        try {
+            if (id !== undefined) {
+                await atualizar("/funcionario", funcionario, setFuncionario);
+                alert("Funcionário atualizado com sucesso!");
+            } else {
+                await cadastrar("/funcionario", funcionario, setFuncionario);
+                alert("Funcionário cadastrado com sucesso!");
+            }
+
+            navigate("/funcionarios");
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao salvar funcionário!");
+        }
+
+        setIsLoading(false);
+    }
+
+    useEffect(() => {
+        if (id !== undefined) {
+            buscarPorId(id);
+        }
+    }, [id]);
 
     return (
         <div className="min-h-screen bg-slate-50 px-24 py-6">
-
             <div className="max-w-4xl mx-auto">
 
                 <button
@@ -24,11 +84,13 @@ function Cadastro() {
 
                     <div>
                         <h1 className="text-3xl font-bold text-slate-900">
-                            Cadastrar funcionário
+                            {id !== undefined ? "Editar funcionário" : "Cadastrar funcionário"}
                         </h1>
 
                         <p className="text-lg text-slate-600">
-                            Preencha os dados do novo colaborador.
+                            {id !== undefined
+                                ? "Altere os dados do colaborador."
+                                : "Preencha os dados do novo colaborador."}
                         </p>
                     </div>
                 </div>
@@ -38,11 +100,7 @@ function Cadastro() {
                         Dados do funcionário
                     </h2>
 
-                    <p className="text-slate-600 mb-8">
-                        Todos os campos são obrigatórios e seguem as regras de negócio do sistema.
-                    </p>
-
-                    <form className="flex flex-col gap-6">
+                    <form onSubmit={salvarFuncionario} className="flex flex-col gap-6 mt-8">
                         <div>
                             <label className="font-medium text-slate-900">
                                 Nome completo
@@ -50,6 +108,9 @@ function Cadastro() {
 
                             <input
                                 type="text"
+                                name="nome"
+                                value={funcionario.nome}
+                                onChange={atualizarEstado}
                                 placeholder="Ex: João da Silva"
                                 className="w-full mt-2 border border-slate-300 rounded-xl px-4 py-3 shadow-sm outline-none focus:ring-2 focus:ring-blue-500"
                             />
@@ -62,6 +123,9 @@ function Cadastro() {
 
                             <input
                                 type="number"
+                                name="salario"
+                                value={funcionario.salario}
+                                onChange={atualizarEstado}
                                 placeholder="Ex: 4500.00"
                                 className="w-full mt-2 border border-slate-300 rounded-xl px-4 py-3 shadow-sm outline-none focus:ring-2 focus:ring-blue-500"
                             />
@@ -74,6 +138,9 @@ function Cadastro() {
 
                             <input
                                 type="text"
+                                name="departamento"
+                                value={funcionario.departamento}
+                                onChange={atualizarEstado}
                                 placeholder="Ex: Tecnologia"
                                 className="w-full mt-2 border border-slate-300 rounded-xl px-4 py-3 shadow-sm outline-none focus:ring-2 focus:ring-blue-500"
                             />
@@ -86,6 +153,9 @@ function Cadastro() {
 
                             <input
                                 type="text"
+                                name="cargo"
+                                value={funcionario.cargo}
+                                onChange={atualizarEstado}
                                 placeholder="Ex: Desenvolvedor Frontend"
                                 className="w-full mt-2 border border-slate-300 rounded-xl px-4 py-3 shadow-sm outline-none focus:ring-2 focus:ring-blue-500"
                             />
@@ -104,16 +174,21 @@ function Cadastro() {
                                 type="submit"
                                 className="px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition duration-200"
                             >
-                                Cadastrar funcionário
+                                {isLoading ? (
+                                    <ClipLoader size={22} color="#ffffff" />
+                                ) : id !== undefined ? (
+                                    "Atualizar funcionário"
+                                ) : (
+                                    "Cadastrar funcionário"
+                                )}
                             </button>
                         </div>
                     </form>
                 </div>
 
             </div>
-
         </div>
     );
 }
 
-export default Cadastro;
+export default FormFuncionario;
