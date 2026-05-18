@@ -97,6 +97,34 @@ function Sobre() {
 
       </section>
 
+      {/* NOSSA HISTÓRIA */}
+      <section className="max-w-5xl mx-auto px-6 pb-24">
+
+        <div className="bg-white border border-zinc-200 rounded-3xl p-12 shadow-sm">
+
+          <h2 className="text-4xl font-bold">
+            Nossa história
+          </h2>
+
+          <p className="mt-6 text-zinc-500 text-lg leading-relaxed">
+           Sistema inteligente para gestão e automação de fluxos de Recursos Humanos.
+
+          </p>
+
+          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+           O RH Flow é uma aplicação desenvolvida para otimizar processos internos de RH, permitindo um controle mais fluido de colaboradores.
+           O foco principal é trazer transparência e agilidade para o dia a dia do setor.
+          </p>
+
+          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+           Atualmente, o sistema permite o gerenciamento completo de funcionários, 
+           possibilitando cadastrar, visualizar, atualizar e remover informações de colaboradores de forma simples e organizada.
+          </p>
+
+        </div>
+
+      </section>
+
     </div>
   )
 }
