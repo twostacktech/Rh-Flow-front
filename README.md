@@ -1,73 +1,119 @@
-# React + TypeScript + Vite
+# RH Flow Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface web desenvolvida para o sistema de gerenciamento de recursos humanos.
 
-Currently, two official plugins are available:
+O **RH Flow Frontend** é uma aplicação React criada para consumir a API do RH Flow e fornecer uma interface visual simples, moderna e organizada para o gerenciamento de funcionários.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este projeto foi desenvolvido com foco em componentização, responsividade e boas práticas no desenvolvimento frontend.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 📌 Sobre o projeto
 
-## Expanding the ESLint configuration
+A aplicação foi construída utilizando React com Vite e possui integração com a API desenvolvida no backend.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+O sistema tem como objetivo facilitar o gerenciamento de funcionários através de uma interface intuitiva e de fácil utilização.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# 🖥️ Funcionalidades atuais
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Atualmente, o frontend conta com:
+
+🏠 Home Page
+- ✅ Página inicial estilizada
+- ✅ Layout responsivo
+- ✅ Navbar personalizada
+- ✅ Footer com redes sociais
+
+👥 Funcionários
+- ✅ Cadastro de funcionários
+- ✅ Listagem de funcionários
+- ✅ Edição de funcionários
+- ✅ Exclusão de funcionários
+- ✅ Integração completa com API REST
+
+---
+
+# 🎨 Interface
+
+O projeto utiliza uma identidade visual inspirada em sistemas modernos de farmácia, utilizando:
+
+O projeto utiliza uma identidade visual inspirada em sistemas modernos de gestão empresarial, utilizando:
+
+- 🔵 Tons de azul
+- ⚪ Fundo claro e escuro
+- ✨ Componentes modernos e minimalistas
+- 🪟 Cards arredondados
+- 📱 Layout responsivo
+
+---
+
+# 🚀 Tecnologias Utilizadas
+
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+### Frontend
+- **React**
+- **TypeScript**
+- **Vite**
+
+### Estilização
+- **Tailwind CSS**
+
+### Bibliotecas
+- **React Router DOM**
+- **Axios**
+- **Phosphor Icons**
+- **React Spinners**
+
+---
+
+# ⚙️ Instalação
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/twostacktech/Rh-Flow-front.git
+cd Rh-Flow-front
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Instale as dependências:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+Execute o projeto:
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+# 🔗 Backend
+
+O frontend consome a API desenvolvida em NestJS disponível no repositório:
+
+```bash
+https://github.com/twostacktech/Rh-flow-backend
+```
+
+Certifique-se de que o backend esteja rodando na porta:
+
+```bash
+http://localhost:3000
+```
+
+---
+
+#👨‍💻 Desenvolvido por
+
+Projeto desenvolvido pelo grupo TwoStack durante o bootcamp Generation Brasil.
