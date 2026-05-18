@@ -1,31 +1,16 @@
-//import {   Users,   Clock,   FileText,  Shield, } from '@phosphor-icons/react';
+import {   Users,   Clock,   FileText,  Shield, ChartBar, Sparkle } from '@phosphor-icons/react';
 import { Link } from "react-router-dom";
 
-// function Home() {
-//   return <h1 style={{ color: "black" }}>HOME OK</h1>;
-// }
-
-// export default Home;
-
 function Home() {
-//   const features = [
-//     { icon: Users, title: "Cadastro de funcionários", desc: "Centralize dados, documentos e histórico em um só lugar." },
-//     { icon: Clock, title: "Controle de ponto", desc: "Marcação digital, banco de horas e relatórios automáticos." },
-//     { icon: FileText, title: "Folha de pagamento", desc: "Cálculos, holerites e encargos sem planilhas." },
-//     { icon: BarChart3, title: "Dashboards", desc: "Indicadores em tempo real para decisões mais rápidas." },
-//     { icon: Shield, title: "Conformidade", desc: "LGPD, eSocial e segurança de dados de ponta a ponta." },
-//     { icon: Sparkles, title: "Automação", desc: "Fluxos inteligentes que eliminam o trabalho repetitivo." },
-//   ];
-
-    const features = [
-    { title: "Cadastro de funcionários", desc: "Centralize dados, documentos e histórico em um só lugar." },
-    { title: "Controle de ponto", desc: "Marcação digital, banco de horas e relatórios automáticos." },
-    { title: "Folha de pagamento", desc: "Cálculos, holerites e encargos sem planilhas." },
-    { title: "Dashboards", desc: "Indicadores em tempo real para decisões mais rápidas." },
-    { title: "Conformidade", desc: "LGPD, eSocial e segurança de dados de ponta a ponta." },
-    { title: "Automação", desc: "Fluxos inteligentes que eliminam o trabalho repetitivo." },
+  const features = [
+    { icon: Users, title: "Cadastro de funcionários", desc: "Centralize dados, documentos e histórico em um só lugar." },
+    { icon: Clock, title: "Controle de ponto", desc: "Marcação digital, banco de horas e relatórios automáticos." },
+    { icon: FileText, title: "Folha de pagamento", desc: "Cálculos, holerites e encargos sem planilhas." },
+    { icon: ChartBar, title: "Dashboards", desc: "Indicadores em tempo real para decisões mais rápidas." },
+    { icon: Shield, title: "Conformidade", desc: "LGPD, eSocial e segurança de dados de ponta a ponta." },
+    { icon: Sparkle, title: "Automação", desc: "Fluxos inteligentes que eliminam o trabalho repetitivo." },
   ];
-
+  
   return (
     <div>
       {/* Hero */}
@@ -61,7 +46,7 @@ function Home() {
           {features.map((f) => (
             <div key={f.title} className="group rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/50">
               <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-brand text-primary-foreground">
-                {/* <f.icon className="h-5 w-5" /> */}
+                { <f.icon className="h-5 w-5" /> }
               </div>
               <h3 className="text-lg font-semibold">{f.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
