@@ -15,7 +15,7 @@ function Home() {
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[var(--gradient-hero)]" aria-hidden />
+        <div className="absolute inset-0 bg-[var(--gradient-hero)" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-32 text-center">
           <img src="/RH_FLOW-semfundo.png" alt="RH Flow" className="mx-auto h-58 w-58 rounded-2xl object-contain shadow-glow" />
           <h1 className="mt-8 text-5xl md:text-7xl font-bold tracking-tight">
