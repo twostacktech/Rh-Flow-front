@@ -1,90 +1,132 @@
+import { Target, RocketLaunch, Heart } from "@phosphor-icons/react"
+
 function Sobre() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      
-      {/* TOPO */}
-      <section className="px-6 py-20 text-center border-b border-zinc-800">
-        <h1 className="text-5xl font-bold">
-          Sobre o <span className="text-cyan-400">RH Flow</span>
+    <div className="min-h-screen bg-[#f5f7fb] text-zinc-900">
+
+      {/* HERO */}
+      <section className="max-w-6xl mx-auto px-6 py-24 text-center">
+
+        <button className="px-5 py-2 rounded-full border border-zinc-300 text-sm text-zinc-600 bg-white shadow-sm">
+          Sobre nós
+        </button>
+
+        <h1 className="mt-8 text-5xl md:text-7xl font-bold leading-tight">
+          Tecnologia que{" "}
+          <span className="text-blue-500">
+            valoriza <br /> pessoas
+          </span>
         </h1>
 
-        <p className="mt-6 text-zinc-400 max-w-3xl mx-auto text-lg">
-          O RH Flow é um sistema desenvolvido para facilitar o gerenciamento
-          de funcionários de forma simples, moderna e organizada.
+        <p className="mt-8 text-zinc-500 text-lg max-w-4xl mx-auto leading-relaxed">
+          Nascemos para descomplicar o RH. Combinamos engenharia,
+          design e obsessão pelo cliente para entregar uma plataforma
+          que o seu time ama usar todos os dias.
         </p>
+
       </section>
 
       {/* CARDS */}
-      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
-        
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
-          <h2 className="text-2xl font-semibold mb-4">
-            Tecnologia
+      <section className="max-w-7xl mx-auto px-6 pb-24 grid md:grid-cols-3 gap-8">
+
+        {/* MISSÃO */}
+        <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300">
+
+          <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
+            <Target
+              size={28}
+              weight="fill"
+              className="text-white"
+            />
+          </div>
+
+          <h2 className="mt-8 text-3xl font-bold">
+            Missão
           </h2>
 
-          <p className="text-zinc-400 leading-relaxed">
-            Projeto desenvolvido utilizando React, TypeScript
-            e Tailwind CSS com foco em performance,
-            organização e design moderno.
+          <p className="mt-5 text-zinc-500 leading-relaxed text-lg">
+            Tornar a gestão de pessoas simples, humana e baseada
+            em dados para empresas de todos os portes.
           </p>
+
         </div>
 
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
-          <h2 className="text-2xl font-semibold mb-4">
-            Gestão
+        {/* VISÃO */}
+        <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300">
+
+          <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
+            <RocketLaunch
+              size={28}
+              weight="fill"
+              className="text-white"
+            />
+          </div>
+
+          <h2 className="mt-8 text-3xl font-bold">
+            Visão
           </h2>
 
-          <p className="text-zinc-400 leading-relaxed">
-            O sistema foi pensado para facilitar o gerenciamento
-            de funcionários e melhorar o controle interno
-            das empresas.
+          <p className="mt-5 text-zinc-500 leading-relaxed text-lg">
+            Ser a plataforma de RH mais querida do Brasil,
+            transformando o jeito como times crescem.
           </p>
+
         </div>
 
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
-          <h2 className="text-2xl font-semibold mb-4">
-            Organização
+        {/* VALORES */}
+        <div className="bg-white border border-zinc-200 rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300">
+
+          <div className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center">
+            <Heart
+              size={28}
+              weight="fill"
+              className="text-white"
+            />
+          </div>
+
+          <h2 className="mt-8 text-3xl font-bold">
+            Valores
           </h2>
 
-          <p className="text-zinc-400 leading-relaxed">
-            Interface intuitiva, limpa e responsiva para
-            proporcionar uma melhor experiência ao usuário.
+          <p className="mt-5 text-zinc-500 leading-relaxed text-lg">
+            Transparência, foco no cliente, evolução contínua
+            e respeito pelas pessoas.
           </p>
+
         </div>
 
       </section>
 
-      {/* HISTÓRIA */}
-      <section className="max-w-5xl mx-auto px-6 pb-20">
-        <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
-          
-          <h2 className="text-3xl font-bold">
-            Sobre o desenvolvimento
+      {/* NOSSA HISTÓRIA */}
+      <section className="max-w-5xl mx-auto px-6 pb-24">
+
+        <div className="bg-white border border-zinc-200 rounded-3xl p-12 shadow-sm">
+
+          <h2 className="text-4xl font-bold">
+            Nossa história
           </h2>
 
-          <p className="mt-5 text-zinc-400 leading-relaxed">
-            O RH Flow foi criado como projeto de estudos com o objetivo
-            de aplicar conhecimentos em desenvolvimento front-end,
-            componentização, rotas e estilização moderna.
+          <p className="mt-6 text-zinc-500 text-lg leading-relaxed">
+           Sistema inteligente para gestão e automação de fluxos de Recursos Humanos.
+
           </p>
 
-          <p className="mt-4 text-zinc-400 leading-relaxed">
-            Durante o desenvolvimento foram utilizadas tecnologias
-            modernas para criar uma aplicação funcional,
-            organizada e agradável visualmente.
+          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+           O RH Flow é uma aplicação desenvolvida para otimizar processos internos de RH, permitindo um controle mais fluido de colaboradores.
+           O foco principal é trazer transparência e agilidade para o dia a dia do setor.
           </p>
 
-          <p className="mt-4 text-zinc-400 leading-relaxed">
-            Além do aprendizado técnico, o projeto busca oferecer
-            uma experiência simples e eficiente para gerenciamento
-            de funcionários.
+          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+           Atualmente, o sistema permite o gerenciamento completo de funcionários, 
+           possibilitando cadastrar, visualizar, atualizar e remover informações de colaboradores de forma simples e organizada.
           </p>
 
         </div>
+
       </section>
 
     </div>
-  );
+  )
 }
 
-export default Sobre;
+export default Sobre
