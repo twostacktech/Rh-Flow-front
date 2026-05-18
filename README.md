@@ -114,6 +114,6 @@ http://localhost:3000
 
 ---
 
-#👨‍💻 Desenvolvido por
+# 👨‍💻 Desenvolvido por
 
 Projeto desenvolvido pelo grupo TwoStack durante o bootcamp Generation Brasil.
