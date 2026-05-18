@@ -31,12 +31,12 @@ function Navbar() {
           <img
             src="/RH_FLOW-semfundo.png"
             alt="RH Flow"
-            className="h-11 w-11 rounded-md object-contain"
+            className="h-16 w-16 rounded-md object-contain"
           />
-
+{/* 
           <span className="text-lg font-bold tracking-tight text-gray-950 dark:text-white">
             RH Flow
-          </span>
+          </span> */}
         </Link>
 
         {/* LINKS DE NAVEGAÇÃO */}
