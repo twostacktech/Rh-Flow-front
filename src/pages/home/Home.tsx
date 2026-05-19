@@ -1,4 +1,4 @@
-import {   Users,   Clock,   FileText,  Shield, ChartBar, Sparkle, WhatsappLogo } from '@phosphor-icons/react';
+import {   Users,   Clock,   FileText,  Shield, ChartBar, Sparkle, WhatsappLogo, EnvelopeSimple } from '@phosphor-icons/react';
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -118,15 +118,23 @@ function Home() {
 </section>
 
 {/* CTA final */}
-<div className="flex justify-center pb-20">
+<div className="flex flex-wrap items-center justify-center gap-25 pb-24">
   <a
     href="https://wa.me/5511999999999"
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-700 to-cyan-500 px-6 py-3 text-xl font-semibold text-white shadow-sm hover:from-blue-700 hover:to-cyan-600 transition-colors"
+    className="flex w-[280px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-700 to-cyan-500 px-6 py-3 text-xl font-semibold text-white shadow-sm transition-colors hover:from-blue-700 hover:to-cyan-600"
   >
     <WhatsappLogo className="h-10 w-10 text-white" />
-    Entre em contato
+    Enviar mensagem
+  </a>
+
+  <a
+    href="mailto:twostacktech@gmail.com"
+    className="flex w-[280px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-700 to-cyan-500 px-6 py-3 text-xl font-semibold text-white shadow-sm transition-colors hover:from-blue-700 hover:to-cyan-600"
+  >
+    <EnvelopeSimple className="h-10 w-10 text-white" />
+    Enviar email
   </a>
 </div>
 
