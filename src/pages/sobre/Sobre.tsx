@@ -95,27 +95,27 @@ function Sobre() {
       </section>
 
       {/* NOSSA HISTÓRIA */}
-      <section className="max-w-5xl mx-auto px-6 pb-24">
+      <section className="max-w-7xl mx-auto px-6 pb-24">
 
-        <div className="bg-white border border-zinc-200 rounded-3xl p-12 shadow-sm">
+        <div className="bg-white border border-zinc-200 rounded-3xl p-14 md:p-16 shadow-sm">
 
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-5xl md:text-6xl font-bold">
             Nossa história
           </h2>
 
-          <p className="mt-6 text-zinc-500 text-lg leading-relaxed">
+          <p className="mt-6 text-zinc-500 text-xl leading-relaxed">
             O RH Flow surgiu a partir da ideia de criar uma plataforma
             moderna e intuitiva para auxiliar empresas no gerenciamento
             de funcionários de forma simples e eficiente.
           </p>
 
-          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+          <p className="mt-5 text-zinc-500 text-xl leading-relaxed">
             Durante o desenvolvimento do projeto foram aplicados
             conhecimentos em React, TypeScript, componentização,
             rotas e estilização utilizando Tailwind CSS.
           </p>
 
-          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+          <p className="mt-5 text-zinc-500 text-xl leading-relaxed">
             Além do aprendizado técnico, o objetivo principal sempre foi
             desenvolver uma aplicação organizada, responsiva e agradável
             visualmente para melhorar a experiência do usuário.
@@ -126,21 +126,21 @@ function Sobre() {
       </section>
 
       {/* Sobre TwoStack */}
-      <section className="max-w-5xl mx-auto px-6 pb-24">
+      <section className="max-w-7xl mx-auto px-6 pb-24">
 
-        <div className="bg-white border border-zinc-200 rounded-3xl p-12 shadow-sm">
+        <div className="bg-white border border-zinc-200 rounded-3xl p-14 md:p-16 shadow-sm">
 
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-5xl md:text-6xl font-bold">
            TwoStack
           </h2>
 
-          <p className="mt-6 text-zinc-500 text-lg leading-relaxed">
+          <p className="mt-6 text-zinc-500 text-xl leading-relaxed">
             A TwoStack é uma empresa de desenvolvimento de software 
             focada na criação de soluções digitais eficientes,
              modernas e escaláveis.
           </p>
 
-          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+          <p className="mt-5 text-zinc-500 text-xl leading-relaxed">
             Somos uma equipe altamente colaborativa,
             onde cada projeto conta com profissionais especializados para garantir organização,
             qualidade e agilidade em todas as etapas do ciclo de desenvolvimento. 
@@ -148,7 +148,7 @@ function Sobre() {
              usabilidade e impacto real para o negócio.
           </p>
 
-          <p className="mt-5 text-zinc-500 text-lg leading-relaxed">
+          <p className="mt-5 text-zinc-500 text-xl leading-relaxed">
            No nosso portfólio de soluções, contamos com plataformas para diferentes segmentos, como gestão de recursos humanos, sistemas para o setor de seguros e uma solução de proteção veicular.
            Todos os nossos projetos são desenvolvidos com foco na centralização de informações, automação de processos e em uma experiência digital mais simples e eficiente no dia a dia. 
           </p>
@@ -159,7 +159,7 @@ function Sobre() {
 
       {/* NOSSA EQUIPE */}
       <section className="max-w-5xl mx-auto px-6 pb-24">
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-5xl font-bold text-center mb-12">
           Quem faz acontecer
         </h2>
 
@@ -174,7 +174,7 @@ function Sobre() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h3 className="mt-6 text-xl font-bold text-zinc-800">Juliana Borges</h3>
+            <h3 className="mt-6 text-2xl font-bold text-zinc-800">Juliana Borges</h3>
             <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedora</p>
           </div>
 
@@ -187,7 +187,7 @@ function Sobre() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h3 className="mt-6 text-xl font-bold text-zinc-800">Lucas Araujo</h3>
+            <h3 className="mt-6 text-2xl font-bold text-zinc-800">Lucas Araujo</h3>
             <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedor</p>
           </div>
 
@@ -200,7 +200,7 @@ function Sobre() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h3 className="mt-6 text-xl font-bold text-zinc-800">Lorena Godoi</h3>
+            <h3 className="mt-6 text-2xl font-bold text-zinc-800">Lorena Godoi</h3>
             <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedora</p>
           </div>
 
@@ -213,7 +213,7 @@ function Sobre() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h3 className="mt-6 text-xl font-bold text-zinc-800">Beatriz Braga</h3>
+            <h3 className="mt-6 text-2xl font-bold text-zinc-800">Beatriz Braga</h3>
             <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedora</p>
           </div>
 
@@ -226,7 +226,7 @@ function Sobre() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h3 className="mt-6 text-xl font-bold text-zinc-800">Luanna Alcântara</h3>
+            <h3 className="mt-6 text-2xl font-bold text-zinc-800">Luanna Alcântara</h3>
             <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedora</p>
           </div>
 
@@ -239,7 +239,7 @@ function Sobre() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h3 className="mt-6 text-xl font-bold text-zinc-800">Daniel Macedo</h3>
+            <h3 className="mt-6 text-2xl font-bold text-zinc-800">Daniel Macedo</h3>
             <p className="text-sm bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent font-semibold mt-1">Desenvolvedor</p>
           </div>
 
